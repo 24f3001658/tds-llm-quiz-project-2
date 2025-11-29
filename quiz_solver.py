@@ -48,9 +48,9 @@ class QuizSolver:
     
     def solve_with_llm(self, question):
         response = self.client.chat.completions.create(
-            model="gpt-5-nano",
+            model="gpt-4o-mini",
             messages=[{"role": "user", "content": "Answer ONLY:\n" + question}],
-            temperature=0
+            temperature=1
         )
         answer = response.choices[0].message.content.strip()
         tick = chr(96)
